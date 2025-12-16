@@ -3,8 +3,23 @@ from pydantic import BaseModel
 from scipy import stats
 from scipy.stats import chi2, rankdata
 import numpy as np
+from fastapi.middleware.cors import CORSMiddleware
+
+origins = [
+    "http://localhost",
+    "http://localhost:3000",
+    "https://yourdomain.com",
+]
 
 app = FastAPI(title="Kruskal-Wallis Test API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 class GroupData(BaseModel):
