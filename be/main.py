@@ -8,6 +8,9 @@ from fastapi.middleware.cors import CORSMiddleware
 origins = [
     "http://localhost",
     "http://localhost:3000",
+    "http://77.42.41.13",
+    "http://77.42.41.13:3000",
+    "https://kruskal-wallis.navistar.dev",
     "https://yourdomain.com",
 ]
 
